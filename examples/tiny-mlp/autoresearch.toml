@@ -1,0 +1,10 @@
+# Tiny MLP example: ~10 seconds per experiment on a laptop CPU.
+editable = ["train.py"]
+command = "python train.py"
+metric = "val_loss"
+goal = "minimize"
+timeout = 60
+program = "program.md"
+
+[agent]
+max_budget_usd = 1.0

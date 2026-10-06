@@ -1,0 +1,21 @@
+# My Autoresearch setup. Paths are relative to this file.
+
+# Files the agent may change. Everything else stays fixed (keep your evaluation out of here).
+editable = ["train.py"]
+
+# One experiment. It must print the metric as a line like `val_loss: 0.1234`.
+command = "python train.py"
+metric = "val_loss"
+goal = "minimize"            # or "maximize"
+timeout = 600                # seconds; a slower run counts as a timeout and is reverted
+
+# Optional
+program = "program.md"       # your research directions for the agent
+# metric_regex = "loss=([0-9.]+)"   # custom pattern; one capture group for the number
+# min_improvement = 0.0      # a change must beat the best by more than this to be kept
+# history = 30               # how many past experiments the agent sees
+
+[agent]
+# model = "opus"             # empty: Claude Code's default model
+# max_budget_usd = 1.0       # cap per experiment; 0 means no cap
+# timeout = 900              # seconds the agent gets to make its change
